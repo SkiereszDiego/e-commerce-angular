@@ -50,8 +50,8 @@ Esta semana precisaremos destas rotas criadas:
   - Nesta tela será aplicado o cupom de desconto. Então a partir de agora é necessário termos um input para o nome do cupom e o demonstrativo de subtotal, desconto aplicado(valor e/ou porcentagem) e total (total = subtotal - desconto).
   - Precisam ter uma rota para o pagamento do pedido (`/checkout`), onde deve só passar para a próxima após escolher a forma de pagamento. Ou seja, sem ter uma pagamento escohido o botão de Finalizar compra deverá ficar desabilitado.
   - Precisam ter uma rota para a confirmação do pedido(`/confirmation`), onde o usuário será avisado que o seu pedido foi realizado com sucesso e logo abaixo terá os detalhes do mesmo:
-    - Lista de itens comprados, com imagem, nome, quantidade e preço em cada
-    - Subtotal, Desconto aplicado e Total.
+  -- Lista de itens comprados, com imagem, nome, quantidade e preço em cada
+  -- Subtotal, Desconto aplicado e Total.
 
 ### Header/Footer
 
@@ -66,3 +66,7 @@ Para toda a navegação pode apresentar um header e um footer, e estes também d
 - Footer:
   - Os links para diferentes parte do site e/ou Links externos.
   - Powered by Angular e a sua autoria no site.
+  
+### Testes
+
+Ter 20% do code coverage.
