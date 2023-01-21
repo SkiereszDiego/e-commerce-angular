@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ECommerceAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
@@ -95,8 +94,7 @@ Para toda a navegação pode apresentar um header e um footer, e estes também d
 - Footer:
   - Os links para diferentes parte do site e/ou Links externos.
   - Powered by Angular e a sua autoria no site.
-  
+
 ### Testes
 
 Ter 20% do code coverage.
->>>>>>> 43a12063f90b87293fcfcbb95eb0123fc1667326
