@@ -10,11 +10,11 @@ export class ProductBoxComponent {
   @Input() fullWidthMode = false;
   @Input() product: Product | undefined = {
     id: 1,
-    title: 'Golden Sword',
+    title: 'Flame Sword',
     price: 150,
     category: 'weapon',
     description: 'description',
-    image: '/assets/images/goldenblade.png',
+    image: '/assets/images/flame_sword.png',
   };
   @Output() addToCart = new EventEmitter();
 

@@ -21,7 +21,7 @@ export class HomeComponent {
   // method doesnt return anything so its void
   onColumnsCountChange(colsNum: number): void {
     this.cols = colsNum;
-    // need to update row qhen col is updated
+    // need to update row when col is updated
     this.rowHeight = ROWS_HEIGHT[colsNum];
   }
 
