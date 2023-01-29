@@ -19,6 +19,7 @@ export class HeaderComponent {
   set cart(cart: Cart) {
     this._cart = cart;
 
+    // transform in a array of quantities and then add them up
     this.itemsQuantity = cart.items
       .map((item) => item.quantity)
       .reduce((prev, curent) => prev + curent, 0);

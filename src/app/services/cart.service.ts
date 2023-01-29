@@ -43,17 +43,45 @@ export class CartService {
     });
   }
   // https://javascript.plainenglish.io/13-methods-to-remove-filter-an-item-in-an-array-and-array-of-objects-in-javascript-f02b71206d9d
-  removeFromCart(item: CartItem): void {
+  removeFromCart(item: CartItem, updateCart = true): CartItem[] {
     const filteredItems = this.cart.value.items.filter(
       (_item) => _item.id !== item.id
     );
 
+    if (updateCart) {
+      this.cart.next({ items: filteredItems });
+      this._snackBar.open('1 item removed from cart.', 'Ok', {
+        duration: 3000,
+      });
+    }
+
+    return filteredItems;
+  }
+
+  removeQuantity(item: CartItem): void {
+    let itemForRemoval!: CartItem;
+
+    let filteredItems = this.cart.value.items.map((_item) => {
+      // removing the quantity
+      if (_item.id === item.id) {
+        _item.quantity--;
+        // if is zero remove the item from the cart
+        if (_item.quantity === 0) {
+          itemForRemoval = _item;
+        }
+      }
+
+      return _item;
+    });
+
+    if (itemForRemoval) {
+      filteredItems = this.removeFromCart(itemForRemoval, false);
+    }
 
     this.cart.next({ items: filteredItems });
     this._snackBar.open('1 item removed from cart.', 'Ok', {
       duration: 3000,
     });
-
   }
 
 }
