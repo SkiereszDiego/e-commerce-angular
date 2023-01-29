@@ -18,6 +18,7 @@ export class CartService {
 
     // find if there is already the same item in the cart
     const itemInCart = items.find((_item) => _item.id === item.id);
+
     if (itemInCart) {
       itemInCart.quantity += 1;
     } else {
@@ -41,4 +42,18 @@ export class CartService {
       duration: 3000,
     });
   }
+  // https://javascript.plainenglish.io/13-methods-to-remove-filter-an-item-in-an-array-and-array-of-objects-in-javascript-f02b71206d9d
+  removeFromCart(item: CartItem): void {
+    const filteredItems = this.cart.value.items.filter(
+      (_item) => _item.id !== item.id
+    );
+
+
+    this.cart.next({ items: filteredItems });
+    this._snackBar.open('1 item removed from cart.', 'Ok', {
+      duration: 3000,
+    });
+
+  }
+
 }
