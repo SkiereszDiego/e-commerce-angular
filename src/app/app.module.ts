@@ -26,6 +26,7 @@ import { ProductBoxComponent } from './pages/home/components/product-box/product
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselComponent } from './pages/home/components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     FiltersComponent,
     ProductBoxComponent,
     CartComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,

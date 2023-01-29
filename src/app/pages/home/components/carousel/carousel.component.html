@@ -1,0 +1,17 @@
+<div class="relative h-96 justify-between max-w-7xl mx-auto border-x">
+    <div class="carousel overflow-hidden relative h-full">
+        <div class="carousel-item absolute h-full w-full"
+            *ngFor="let image of images; let i = index"
+            [ngClass]="{ 'opacity-100': activeImage === image }">
+        <img class="h-full w-full object-cover" [src]="image">
+        </div>
+    </div>
+    <div class="carousel-controls absolute bottom-0 flex justify-center w-full pb-5">
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+                *ngIf="currentIndex > 0"
+                (click)="previous()">Previous</button>
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+                *ngIf="currentIndex < images.length - 1"
+                (click)="next()">Next</button>
+    </div>
+</div>
